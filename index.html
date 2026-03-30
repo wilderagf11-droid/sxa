@@ -13,15 +13,22 @@ body{
   background:url('111.jpg') center/cover no-repeat fixed;
   background-color:#f5efe4;
   min-height:100vh;
-  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:auto;
+}
+html{
+  min-height:100%;
+  overflow-x:hidden;
+  overflow-y:auto;
 }
 .screen{
-  position:fixed;
-  inset:0;
+  position:relative;
+  width:100%;
+  min-height:100vh;
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:20px;
+  padding:24px 16px;
 }
 .center-box{
   width:min(420px,92vw);
@@ -30,11 +37,34 @@ body{
   padding:32px;
   border-radius:24px;
   text-align:center;
+  margin:0 auto;
   box-shadow:0 15px 40px rgba(0,0,0,0.15);
 }
-.hidden{display:none}
+.hidden{display:none !important}
 h1{color:#7a5b35;margin:0 0 12px;font-family:'Playfair Display',serif;font-size:32px;line-height:1.2;text-shadow:0 1px 2px rgba(255,255,255,0.4)}
-p{color:#4e3d28;line-height:1.7;margin:10px 0;font-size:17px;font-weight:500}
+p{
+  color:#4e3d28;
+  line-height:1.7;
+  margin:10px auto;
+  font-size:17px;
+  font-weight:500;
+  text-align:center;
+}
+.date,.address,.counter,.parents,h1{
+  text-align:center;
+  width:100%;
+}
+@media (max-width:480px){
+  .center-box{
+    padding:26px 20px;
+  }
+  h1{
+    font-size:28px;
+  }
+  p{
+    font-size:16px;
+  }
+}
 button{
   width:100%;
   padding:14px;
